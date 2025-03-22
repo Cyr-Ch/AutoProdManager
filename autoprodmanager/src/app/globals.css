@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Apple-inspired styles */
+@layer components {
+  .apple-btn {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .apple-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  .apple-btn:active {
+    transform: scale(0.95);
+  }
+
+  .apple-card {
+    @apply bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-gray-200 dark:border-zinc-800;
+  }
+
+  .apple-input {
+    @apply w-full p-2 rounded-lg border border-gray-300 dark:border-zinc-700 
+    focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-zinc-800;
+  }
+
+  .apple-heading {
+    @apply text-2xl font-semibold text-gray-900 dark:text-white;
+  }
+
+  .apple-subheading {
+    @apply text-lg font-medium text-gray-800 dark:text-gray-200;
+  }
+}
